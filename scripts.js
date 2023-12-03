@@ -106,19 +106,19 @@ $(function () {
             var itemId = "#" + $(this).closest('.buildingContainer').attr('id');
             componentFieldsEditor(itemId);
             valuesIn = obtainValuesAddedByUser(itemId);
-            formGenerated = outputGenerator(itemId, valuesIn)
+            formGenerated = outputGenerator(itemId, valuesIn);
+            var formGeneratedDiv = $(this).find('.formGenerated');
             // var formCode = `<form action="#" method="post">`;
             // Verificar si el elemento ya existe
-            if ($(itemId).find('.formGenerated').length === 0) {
-                // Si no existe, añadirlo
-                $(itemId).append(`<div class="formGenerated"></div>`); // Meter dentro el formCode
-                $(".formGenerated").html(formGenerated);
+            if (formGeneratedDiv.length === 0) {
+                // Si no existe, añadirlo dentro del elemento actual
+                $(this).append(`<div class="formGenerated"></div>`);
+                formGeneratedDiv = $(this).find('.formGenerated');
             } else {
                 // Si ya existe, realizar alguna acción adicional o simplemente no hacer nada
-                $(".formGenerated").html(" ");
-                $(".formGenerated").html(formGenerated);
+                $(formGeneratedDiv).html(" ");
+                $(formGeneratedDiv).html(formGenerated);
             }
-
         });
         // Agregamos un controlador de eventos al formulario para evitar su envío predeterminado
         $('formBuilder').submit(function (event) {
@@ -545,6 +545,9 @@ $(function () {
                     </div>`;
                 break;
         }
+
+        formCode = formCode.replace(/</g, "&lt;");
+        formCode = formCode.replace(/>/g, "&gt;");
         
         return formCode;
     }
