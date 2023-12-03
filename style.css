@@ -1,0 +1,97 @@
+* {
+    box-sizing: border-box;
+}
+
+
+body.modal-open {
+    overflow: hidden;
+}
+
+
+.formBuilder fieldset{
+    display: flex;
+    flex-direction: column;
+}
+
+
+.buildingContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.buildingContainer:hover{
+    cursor: pointer;
+}
+
+
+.component {
+    border: 0.5px solid gray;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.component:hover{
+    cursor: grab;
+}
+.components{
+    border: 0.5px solid gray;
+    display: flex;
+    width: 80%;
+    margin: 0 auto;
+    justify-content: space-between;
+    height: max-content;
+}
+.components__selector, .components__builder, .components__settings {
+    border: 0.5px solid gray;
+}
+
+.formGenerated{
+    display: none;
+}
+
+.header {
+    display: flex;
+    justify-content: end;
+    align-items: baseline;
+}
+.htmloutput {
+    font-size: 12px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff; 
+    z-index: 999; 
+    box-sizing: border-box;
+    overflow-y: auto; /* Esto permite hacer scroll */
+}
+
+.htmloutput__content {
+    max-height: 7000vh; /* Ajusta la altura máxima según sea necesario */
+    overflow-y: auto;
+}
+.htmloutput,
+.htmloutput__content {
+    margin: 0;
+    padding: 0;
+}
+
+.htmloutput,
+.htmloutput__content {
+    height: 100% !important;
+}
+
+
+
+.title{
+    background-color: brown;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creador de formularios</title>
+    <!-- Bootstrap 5 links -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
+    </script>
+
+    <link rel="stylesheet" href="style.css">
+    <!-- jQuery link -->
+    <script src="https://code.jquery.com/jquery-1.9.0.min.js" type="text/javascript"></script>
+    <!-- jQuery UI links -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://code.jquery.com/ui/1.10.2/jquery-ui.min.js" type="text/javascript"></script>
+    <script src="scripts.js"></script>
+</head>
+
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
+    </script>
+    <div class="builder">
+        <div class="header">
+            <p>Haz click en el botón exportar para exportar a html -> </p>
+            <a href="">
+                <button type="button" id="generateHTML" class="btn btn-primary" data-toggle="modal"
+                    data-target="#exampleModalLong">
+                    Exportar a html
+                </button>
+            </a>
+        </div>
+        <div class="components">
+            <div class="components__selector">
+                <div class="title">Selecciona componente</div>
+                <div class="component" id="c1">
+                    <i class="fas fa-text-width"></i>
+                    <span>Text Area</span>
+                </div>
+                <div class="component" id="c2">
+                    <i class="fas fa-keyboard"></i>
+                    <span>Input</span>
+                </div>
+                <div class="component" id="c3">
+                    <i class="fas fa-list"></i>
+                    <span>Select</span>
+                </div>
+                <div class="component" id="c4">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Radio</span>
+                </div>
+                <div class="component" id="c5">
+                    <i class="fas fa-check-square"></i>
+                    <span>Checkbox</span>
+                </div>
+            </div>
+            <div class="components__builder" id="builder">
+                <div class="title">Haz click para editar</div>
+            </div>
+
+            <div class="components__settings">
+                <div class="title">Configúralo a tu gusto</div>
+                <div class="components__settings__builder" id="components__settings__builder"></div>
+            </div>
+        </div>
+    </div>
+    <div class="htmloutput" id="htmloutput">
+       <p>Aquí tienes tu html:</p> 
+       <div id="htmloutput__shown"></div>
+       <a href="">
+        <button type="button" id="backToGenerator" class="btn btn-primary" data-toggle="modal"
+            data-target="#exampleModalLong">
+            Volver al generador
+        </button>
+    </a>
+    </div>
+
+</body>
+
+</html>
